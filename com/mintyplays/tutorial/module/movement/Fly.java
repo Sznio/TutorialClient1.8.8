@@ -12,7 +12,7 @@ import org.lwjgl.input.Keyboard;
 import java.util.ArrayList;
 
 public class Fly extends Module {
-    private String mode = Tutorial.instance.settingsManager.getSettingByName("Fly Mode").getValString();;
+    private String mode;
 
     public Fly() {
         super("Fly", Keyboard.KEY_F, Category.MOVEMENT);
@@ -28,6 +28,7 @@ public class Fly extends Module {
 
     @EventTarget
     public void onUpdate(EventUpdate event) {
+        mode =  = Tutorial.instance.settingsManager.getSettingByName("Fly Mode").getValString();
         this.setDisplayName("Fly §7" + mode);
 
         if(mode.equalsIgnoreCase("Hypixel")) {
